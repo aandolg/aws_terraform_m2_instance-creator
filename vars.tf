@@ -1,6 +1,6 @@
 variable "key_name_home_work" {
   type = string
-  default = "home_key_pair"
+  default = "home_1key_pair"
 }
 
 variable "path_to_public_key" {

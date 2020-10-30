@@ -11,8 +11,8 @@ data "aws_ami" "amzn2_instance" {
   owners = ["137112412989"] # Canonical
 }
 
-resource "aws_security_group" "allow_ssh" {
-  name        = "allow_ssh"
+resource "aws_security_group" "allow_1ssh" {
+  name        = "allow_1ssh"
   description = "Allow ssh inbound traffic"
   ingress {
     description = "TLS from VPC"
@@ -28,12 +28,12 @@ resource "aws_security_group" "allow_ssh" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   tags = {
-    Name = "allow_ssh"
+    Name = "allow_1ssh"
   }
 }
 
-resource "aws_security_group" "allow_http" {
-  name        = "allow_http"
+resource "aws_security_group" "allow_1http" {
+  name        = "allow_1http"
   description = "Allow ssh inbound traffic"
   ingress {
     description = "TLS from VPC"
@@ -49,12 +49,12 @@ resource "aws_security_group" "allow_http" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   tags = {
-    Name = "allow_http"
+    Name = "allow_1http"
   }
 }
 
-resource "aws_security_group" "allow_https" {
-  name        = "allow_https"
+resource "aws_security_group" "allow_1https" {
+  name        = "allow_1https"
   description = "Allow ssh inbound traffic"
   ingress {
     description = "TLS from VPC"
@@ -70,7 +70,7 @@ resource "aws_security_group" "allow_https" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   tags = {
-    Name = "allow_https"
+    Name = "allow_1https"
   }
 }
 
@@ -85,9 +85,9 @@ resource "aws_instance" "web" {
   instance_type = local.workspace["instance_type"]
   key_name      = aws_key_pair.generated_key_home.key_name
   vpc_security_group_ids = [
-    aws_security_group.allow_ssh.id,
-    aws_security_group.allow_http.id,
-    aws_security_group.allow_https.id
+    aws_security_group.allow_1ssh.id,
+    aws_security_group.allow_1http.id,
+    aws_security_group.allow_1https.id
   ]
 
   root_block_device {
