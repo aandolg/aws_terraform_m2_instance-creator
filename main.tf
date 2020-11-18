@@ -115,6 +115,6 @@ resource "aws_instance" "web" {
   }
 
   tags = {
-    Name = "Project name"
+    Name = var.project_name
   }
 }

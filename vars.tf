@@ -17,3 +17,13 @@ variable "path_to_credentials_file" {
   type = string
   default = "~/.aws/credentials"
 }
+
+variable "aws_profile" {
+  type = string
+  default = "babenko_dev"
+}
+
+variable "project_name" {
+  type = string
+  default = "Rotoplas_test"
+}
