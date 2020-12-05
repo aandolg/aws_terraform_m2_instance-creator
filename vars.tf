@@ -1,16 +1,16 @@
-variable "key_name_home_work" {
+variable "key_test" {
   type = string
-  default = "home_1key_pair"
+  default = "home_key_pair"
 }
 
 variable "path_to_public_key" {
   type = string
-  default = "~/.ssh/id_rsa_aws_hillel.pub"
+  default = "~/.ssh/id_rsa.pub"
 }
 
 variable "path_to_private_key" {
   type = string
-  default = "~/.ssh/id_rsa_aws_hillel"
+  default = "~/.ssh/id_rsa"
 }
 
 variable "path_to_credentials_file" {
